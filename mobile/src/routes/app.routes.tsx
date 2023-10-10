@@ -6,7 +6,10 @@ import Order from '../pages/Order';
 
 export type StackPramsList = {
     Dashboard: undefined;
-    Order: undefined;
+    Order: {
+        number: number | string;
+        order_id: string;
+    };
 }
 
 const Stack = createNativeStackNavigator<StackPramsList>();
@@ -18,7 +21,7 @@ function AppRoutes() {
              name="Dashboard"
              component={Dashboard}
              options={{ headerShown: false }}
-            />
+            />  
 
             <Stack.Screen 
                 name='Order'
